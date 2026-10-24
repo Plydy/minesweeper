@@ -1,5 +1,4 @@
 import { Board } from "@/domain/entities/Board.ts";
-import { Cell } from "@/domain/entities/Cell.ts";
 
 export class MineGenerator {
     public generate(board: Board, mineCount: number) {
@@ -12,7 +11,7 @@ export class MineGenerator {
 
             const randomIndex = Math.floor(Math.random() * availableCells.length);
 
-            const cell = board.cells[randomIndex];
+            const cell = availableCells[randomIndex];
 
             if (cell === undefined) {
                 throw new Error('Unable to select a cell for mine');
